@@ -3,6 +3,8 @@
 cointoss = "cointoss"
 coin = "cointoss"
 vote = "vcall {args}"
-# !help is pure pain and I'd love to improve it.
-# Why can't I use variables, e.g. ${sv_vote_commands}, here?
-help = "say \"Commands: !restart, !allready, !endmatch, !kick, !shuffleteams, !fraglimit, !reducematchtime, !extendmatchtime\"; say \"Game modes: !tdm (team deathmatch), !dm (deathmatch), !tdm (team deathmatch), !ctf (capture the flag), !ft (freeze tag), !dom (domination), !lms (last man standing), !ka (keepaway), !inv (invasion), !kh (keyhunt), !as (assault), !ons (onslaught), !rc (race), !nb (nexball).\""
+map = "chmap {args}"
+nextmap = "nextmap {args}"
+
+help = "say Commands: !map <map name>, !nextmap <map name>, !restart, !allready, !endmatch, game types (see !gametypes)"
+gametypes = "say Game type commands: !tdm (team deathmatch), !dm (deathmatch), !tdm (team deathmatch), !ctf (capture the flag), !ft (freeze tag), !dom (domination), !lms (last man standing), !ka (keepaway), !inv (invasion), !kh (keyhunt), !as (assault), !ons (onslaught), !rc (race), !nb (nexball)."
