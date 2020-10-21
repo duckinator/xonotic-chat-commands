@@ -1,0 +1,5 @@
+[commands]
+# Default for undefined commands: `!x {args}` => `vcall x {args}`
+cointoss = "cointoss"
+coin = "cointoss"
+vote = "vcall {args}"

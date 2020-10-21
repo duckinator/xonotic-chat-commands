@@ -1,0 +1,6 @@
+[server]
+address = "127.0.0.1"
+port = 26000
+rcon_password = "insert rcon password here"
+
+listen_port = 27000
