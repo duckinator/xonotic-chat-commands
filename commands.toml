@@ -5,6 +5,7 @@ coin = "cointoss"
 vote = "vcall {args}"
 map = "chmap {args}"
 nextmap = "nextmap {args}"
+maps = "sv_cmd lsmaps"
 
 help = "say Commands: !map <map name>, !nextmap <map name>, !restart, !allready, !endmatch, game types (see !gametypes)"
 gametypes = "say Game type commands: !tdm (team deathmatch), !dm (deathmatch), !tdm (team deathmatch), !ctf (capture the flag), !ft (freeze tag), !dom (domination), !lms (last man standing), !ka (keepaway), !inv (invasion), !kh (keyhunt), !as (assault), !ons (onslaught), !rc (race), !nb (nexball)."

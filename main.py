@@ -88,9 +88,14 @@ class XonoticChatCommands:
         rcon_command = rcon_command.format(args=args)
         print(">>", rcon_command)
         response = self.rcon.execute(rcon_command).decode()
-        if not response:
-            response = "(no response from server)"
-        print("=>", )
+        print("=>", repr(response))
+        if response:
+            # HACK: Bullshit kludge for `!maps`.
+            # TODO: Make this less kludgy.
+            if response.startswith('^9[::^7SVQC^9::^5INFO^9]'):
+                response = '\n'.join(response.split('\n')[1:])
+
+            self.rcon.execute("say " + response)
 
     def on_player_connect(self, data):
         if data.split(' ', 1)[1] != 'connected':
