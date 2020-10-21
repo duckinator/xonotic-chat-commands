@@ -56,6 +56,8 @@ class XonoticChatCommands:
     def handle(self, data):
         if data[0:1] == "\x01":
             self.on_chat(data)
+        elif ' ' in data and data.split(' ', 1)[1] == 'connected':
+            self.on_player_connect(data)
         #else:
         #    print(f"[UNKNOWN MESSAGE TYPE] {data!r}")
 
@@ -89,6 +91,20 @@ class XonoticChatCommands:
         if not response:
             response = "(no response from server)"
         print("=>", )
+
+    def on_player_connect(self, data):
+        if data.split(' ', 1)[1] != 'connected':
+            return
+
+        if '[BOT]' in data:
+            return
+
+        sender = data.split(' ', 1)[0]
+
+        if sender[0] == '^':
+            return
+
+        self.rcon.execute(f"say Hello {sender}! This server has commands usable by saying !<command> in chat. See !help for details.")
 
 if __name__ == '__main__':
     XonoticChatCommands().main_loop()
