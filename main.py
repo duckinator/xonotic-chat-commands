@@ -94,8 +94,7 @@ class XonoticChatCommands:
             # TODO: Make this less kludgy.
             if response.startswith('^9[::^7SVQC^9::^5INFO^9]'):
                 response = '\n'.join(response.split('\n')[1:])
-
-            self.rcon.execute("say " + response)
+                self.rcon.execute("say " + response)
 
     def on_player_connect(self, data):
         if data.split(' ', 1)[1] != 'connected':
